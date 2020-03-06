@@ -11,4 +11,6 @@ import Foundation
 
 print(myString);
 
-print_grid(grid : grid);
+//print_grid(grid : grid);
+
+generate_solvable_grid();

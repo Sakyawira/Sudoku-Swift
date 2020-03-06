@@ -13,7 +13,7 @@ let UNASSIGNED = 0;
 
 let myString : String = "hi";
 
-var grid : [[Int]] = [  [1, 0, 0, 0, 0, 0, 0, 0, 0],
+var grid : [[Int]] = [  [0, 0, 0, 0, 0, 0, 0, 0, 0],
                         [0, 0, 0, 0, 0, 0, 0, 0, 0],
                         [0, 0, 0, 0, 0, 0, 0, 0, 0],
                         [0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -25,25 +25,23 @@ var grid : [[Int]] = [  [1, 0, 0, 0, 0, 0, 0, 0, 0],
 
 func print_grid(/*grid:[[Int]]*/)
 {
-    for x in 0..<grid.count{
-        var line = "";
-        for y in 0..<grid[x].count
-        {
-            line += String(grid[x][y]);
-            line += "";
-        }
-        print(line);
+    for i in 0..<grid.count
+    {
+        print(grid[i]);
     }
+    print("");
 }
 
 func find_unassigned_location( row : inout Int, col : inout Int) -> Bool
 {
-    for row in 0..<N
+    for i in 0..<N
     {
-        for col in 0..<N
+        for j in 0..<N
         {
-            if (grid[row][col] == UNASSIGNED)
+            if (grid[i][j] == UNASSIGNED)
             {
+                row = i;
+                col = j;
                 return true;
             }
                 
@@ -143,4 +141,43 @@ func solve_sudoku() -> Bool
         }
     }
     return false; // this triggers backtracking
+}
+
+func generate_solvable_grid()
+{
+    var random_sequence : [Int] = [1, 2, 3, 4, 5, 6 ,7 ,8 ,9];
+    random_sequence.shuffle();
+
+    print(random_sequence);
+    print("");
+    grid[0] = random_sequence;
+    
+    print_grid();
+
+    if(!solve_sudoku())
+    {
+        fatalError("No Solution!");
+    }
+    
+
+    print_grid();
+
+    //copy()
+
+    // Setting random grid to 0
+    for _ in 0..<60
+    {
+        let randomNumber : Int = Int.random(in: 0...8);
+        let randomNumber2 : Int = Int.random(in: 0...8);
+        grid[randomNumber][randomNumber2] = 0;
+    }
+    
+    print_grid();
+    
+     if(!solve_sudoku())
+    {
+        fatalError("No Solution");
+    }
+
+    print_grid();
 }
