@@ -67,3 +67,46 @@ func used_in_row(row : Int, num : Int) -> Bool
         
     return false;
 }
+
+func used_in_col(col : Int, num : Int) -> Bool
+{
+    for row in 0..<N
+    {
+        if (grid[row][col] == num)
+        {
+            return true;
+        }
+        
+    }
+        
+    return false;
+}
+
+func used_in_box(boxStartRow : Int, boxStartCol : Int, num : Int) -> Bool
+{
+    for row in 0..<3
+    {
+        for col in 0..<3
+        {
+            if (grid[row + boxStartRow][col + boxStartCol] == num)
+            {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+func is_safe(row : Int, col : Int, num : Int) -> Bool
+{
+    /* Check if 'num' is not already placed in
+    current row, current column and current 3x3 box */
+    if (!used_in_row(row : row, num : num) && !used_in_col(col : col, num : num) && !used_in_box(boxStartRow : row - row % 3, boxStartCol : col - col % 3, num : num) && grid[row][col] == UNASSIGNED)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
