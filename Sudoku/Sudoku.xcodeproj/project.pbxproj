@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		52A52AD22411E910007C3569 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A52AD12411E910007C3569 /* main.swift */; };
+		52A52ADB2411EA3D007C3569 /* Sudoku.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A52ADA2411EA3D007C3569 /* Sudoku.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		52A52ACE2411E910007C3569 /* Sudoku */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Sudoku; sourceTree = BUILT_PRODUCTS_DIR; };
 		52A52AD12411E910007C3569 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		52A52ADA2411EA3D007C3569 /* Sudoku.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sudoku.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				52A52AD12411E910007C3569 /* main.swift */,
+				52A52ADA2411EA3D007C3569 /* Sudoku.swift */,
 			);
 			path = Sudoku;
 			sourceTree = "<group>";
@@ -120,6 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52A52ADB2411EA3D007C3569 /* Sudoku.swift in Sources */,
 				52A52AD22411E910007C3569 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

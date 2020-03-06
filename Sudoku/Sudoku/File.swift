@@ -1,5 +1,5 @@
 //
-//  main.swift
+//  File.swift
 //  Sudoku
 //
 //  Created by Sakyawira Ruslim on 6/03/20.
@@ -7,8 +7,3 @@
 //
 
 import Foundation
-
-
-print(myString);
-
-print_grid(grid : grid);
