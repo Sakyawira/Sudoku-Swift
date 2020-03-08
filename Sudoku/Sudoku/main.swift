@@ -8,9 +8,10 @@
 
 import Foundation
 
+var sudoku = Sudoku();
 
-print(myString);
+//print(myString);
 
 //print_grid(grid : grid);
 
-generate_solvable_grid();
+sudoku.generate_solvable_grid();
