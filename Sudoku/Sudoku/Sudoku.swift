@@ -12,8 +12,6 @@ class Sudoku{
     let N : Int = 9;
     let UNASSIGNED : Int = 0;
     
-    //let myString : String = "hi";
-    
     var grid : Matrix = Matrix(rows : 9, columns: 9);
     
     func print_grid(/*grid:[[Int]]*/)
@@ -33,11 +31,8 @@ class Sudoku{
                     col = j;
                     return true;
                 }
-                
             }
-            
         }
-        
         return false;
     }
     
@@ -49,9 +44,7 @@ class Sudoku{
             {
                 return true;
             }
-            
         }
-        
         return false;
     }
     
@@ -63,9 +56,7 @@ class Sudoku{
             {
                 return true;
             }
-            
         }
-        
         return false;
     }
     
@@ -86,8 +77,6 @@ class Sudoku{
     
     func is_safe(row : Int, col : Int, num : Int) -> Bool
     {
-        /* Check if 'num' is not already placed in
-         current row, current column and current 3x3 box */
         if (!used_in_row(row : row, num : num) && !used_in_col(col : col, num : num) && !used_in_box(boxStartRow : row - row % 3, boxStartCol : col - col % 3, num : num) && grid[row, col] == UNASSIGNED)
         {
             return true;
@@ -142,9 +131,9 @@ class Sudoku{
         
         for n in 0..<9
         {
-             grid[0, n] = random_sequence[n];
+            grid[0, n] = random_sequence[n];
         }
-       
+        
         
         print_grid();
         
@@ -153,10 +142,7 @@ class Sudoku{
             fatalError("No Solution!");
         }
         
-        
         print_grid();
-        
-        //copy()
         
         // Setting random grid to 0
         for _ in 0..<60

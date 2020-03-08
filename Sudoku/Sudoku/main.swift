@@ -10,8 +10,17 @@ import Foundation
 
 var sudoku = Sudoku();
 
-//print(myString);
-
-//print_grid(grid : grid);
-
 sudoku.generate_solvable_grid();
+
+print("Do you want to make your own grid?");
+print("0 :  No, 1 : Yes");
+
+if (readLine() == "0")
+{
+    print("Randomizing board...");
+}
+
+else
+{
+    print("Input your values!");
+}
