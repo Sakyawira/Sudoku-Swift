@@ -22,5 +22,27 @@ if (readLine() == "0")
 
 else
 {
-    print("Input your values!");
+    var continue_s : String? = nil;
+    repeat{
+    print("Input the column you want to change");
+        
+        // Row
+        if let row = Int(readLine()!){
+            print(row);
+        }
+        else{
+            print("Please input a number between 0 - 8 !");
+            continue;
+        }
+       
+        // Column
+        if let column = Int(readLine()!){
+                print(column);
+            }
+            else{
+                print("Please input a number between 0 - 8 !");
+                continue;
+            }
+        continue_s = readLine()!;
+    } while(continue_s != nil)
 }
