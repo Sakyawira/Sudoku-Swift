@@ -19,6 +19,16 @@ class Sudoku{
         grid.printGrid();
     }
     
+    func set_grid(Row : Int, Col : Int, Num : Int) -> Bool
+    {
+        if (Num >= 0 && Num < 9)
+        {
+            grid[Row, Col] = Num;
+            return true;
+        }
+        return false;
+    }
+    
     func find_unassigned_location( row : inout Int, col : inout Int) -> Bool
     {
         for i in 0..<N
