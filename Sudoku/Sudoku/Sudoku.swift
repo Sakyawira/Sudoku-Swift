@@ -11,9 +11,9 @@ import Foundation
 class Sudoku{
     let N : Int = 9;
     let UNASSIGNED = 0;
-
+    
     //let myString : String = "hi";
-
+    
     var grid : [[Int]] = [  [0, 0, 0, 0, 0, 0, 0, 0, 0],
                             [0, 0, 0, 0, 0, 0, 0, 0, 0],
                             [0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -23,7 +23,7 @@ class Sudoku{
                             [0, 0, 0, 0, 0, 0, 0, 0, 0],
                             [0, 0, 0, 0, 0, 0, 0, 0, 0],
                             [0, 0, 0, 0, 0, 0, 0, 0, 0]];
-
+    
     func print_grid(/*grid:[[Int]]*/)
     {
         for i in 0..<grid.count
@@ -32,7 +32,7 @@ class Sudoku{
         }
         print("");
     }
-
+    
     func find_unassigned_location( row : inout Int, col : inout Int) -> Bool
     {
         for i in 0..<N
@@ -45,14 +45,14 @@ class Sudoku{
                     col = j;
                     return true;
                 }
-                    
-            }
                 
-        }
+            }
             
+        }
+        
         return false;
     }
-
+    
     func used_in_row(row : Int, num : Int) -> Bool
     {
         for col in 0..<N
@@ -61,12 +61,12 @@ class Sudoku{
             {
                 return true;
             }
-                
-        }
             
+        }
+        
         return false;
     }
-
+    
     func used_in_col(col : Int, num : Int) -> Bool
     {
         for row in 0..<N
@@ -77,10 +77,10 @@ class Sudoku{
             }
             
         }
-            
+        
         return false;
     }
-
+    
     func used_in_box(boxStartRow : Int, boxStartCol : Int, num : Int) -> Bool
     {
         for row in 0..<3
@@ -95,11 +95,11 @@ class Sudoku{
         }
         return false;
     }
-
+    
     func is_safe(row : Int, col : Int, num : Int) -> Bool
     {
         /* Check if 'num' is not already placed in
-        current row, current column and current 3x3 box */
+         current row, current column and current 3x3 box */
         if (!used_in_row(row : row, num : num) && !used_in_col(col : col, num : num) && !used_in_box(boxStartRow : row - row % 3, boxStartCol : col - col % 3, num : num) && grid[row][col] == UNASSIGNED)
         {
             return true;
@@ -109,19 +109,19 @@ class Sudoku{
             return false;
         }
     }
-
+    
     func solve_sudoku() -> Bool
     {
         var row : Int = 0;
         var col : Int = 0;
-
+        
         // If there is no unassigned location,
         // we are done
         if (!find_unassigned_location(row : &row, col : &col))
         {
             return true; // success!
         }
-
+        
         // consider digits 1 to 9
         for num in 1...9
         {
@@ -130,41 +130,41 @@ class Sudoku{
             {
                 // make tentative assignment
                 grid[row][col] = num;
-
+                
                 // return, if success, yay!
                 if (solve_sudoku())
                 {
                     return true;
                 }
-
+                
                 // failure, unmake & try again
                 grid[row][col] = UNASSIGNED;
             }
         }
         return false; // this triggers backtracking
     }
-
+    
     func generate_solvable_grid()
     {
         var random_sequence : [Int] = [1, 2, 3, 4, 5, 6 ,7 ,8 ,9];
         random_sequence.shuffle();
-
+        
         print(random_sequence);
         print("");
         grid[0] = random_sequence;
         
         print_grid();
-
+        
         if(!solve_sudoku())
         {
             fatalError("No Solution!");
         }
         
-
+        
         print_grid();
-
+        
         //copy()
-
+        
         // Setting random grid to 0
         for _ in 0..<60
         {
@@ -175,11 +175,11 @@ class Sudoku{
         
         print_grid();
         
-         if(!solve_sudoku())
+        if(!solve_sudoku())
         {
             fatalError("No Solution");
         }
-
+        
         print_grid();
     }
 }
