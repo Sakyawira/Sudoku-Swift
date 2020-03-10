@@ -21,7 +21,7 @@ class Sudoku{
     
     func set_grid(Row : Int, Col : Int, Num : Int) -> Bool
     {
-        if (Num >= 0 && Num < 9)
+        if (Num >= 1 && Num < 10)
         {
             grid[Row, Col] = Num;
             return true;

@@ -18,6 +18,7 @@ print("0 :  No, any other key : Yes");
 if (readLine() == "0")
 {
     print("Randomizing board...");
+    sudoku.generate_solvable_grid();
 }
     
 else
@@ -67,17 +68,17 @@ else
         // Num
         while (true)
         {
-            print("Input the number you want (0 - 8)");
+            print("Input the number you want (1 - 9)");
             if let inumber = Int(readLine()!)
             {
-                if inumber >= 0 && inumber < 9
+                if inumber >= 1 && inumber < 10
                 {
                     print(inumber);
                     number = inumber;
                     break;
                 }
             }
-            print("Please input a number between 0 - 8 !");
+            print("Please input a number between 1 - 9 !");
             continue_s = nil;
             continue;
         }
