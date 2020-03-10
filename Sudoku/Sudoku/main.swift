@@ -13,7 +13,7 @@ var sudoku = Sudoku();
 // sudoku.generate_solvable_grid();
 
 print("Do you want to make your own grid?");
-print("0 :  No, 1 : Yes");
+print("0 :  No, any other key : Yes");
 
 if (readLine() == "0")
 {
@@ -24,39 +24,59 @@ else
 {
     var continue_s : String? = nil;
     repeat{
-        print("Input the column you want to change");
+        var row : Int = 0;
+        var column : Int = 0;
+        var number : Int = 0;
         
         // Row
-        var row : Int = 0;
-        if let irow = Int(readLine()!){
-            print(irow);
-            row = irow;
-        }
-        else{
+        while (true)
+        {
+            print("Input the row you want to change (0 - 8)");
+            if let irow = Int(readLine()!)
+            {
+                if irow >= 0 && irow < 9
+                {
+                    print(irow);
+                    row = irow;
+                    break;
+                }
+            }
             print("Please input a number between 0 - 8 !");
             continue_s = nil;
             continue;
         }
         
         // Column
-        var column : Int = 0;
-        if let icolumn = Int(readLine()!){
-            print(icolumn);
-            column = icolumn;
-        }
-        else{
+        while (true)
+        {
+            print("Input the column you want to change (0 - 8)");
+            if let icolumn = Int(readLine()!)
+            {
+                if icolumn >= 0 && icolumn < 9
+                {
+                    print(icolumn);
+                    column = icolumn;
+                    break;
+                }
+            }
             print("Please input a number between 0 - 8 !");
             continue_s = nil;
             continue;
         }
         
         // Num
-        var number : Int = 0;
-        if let inumber = Int(readLine()!){
-            print(inumber);
-            number = inumber;
-        }
-        else{
+        while (true)
+        {
+            print("Input the number you want (0 - 8)");
+            if let inumber = Int(readLine()!)
+            {
+                if inumber >= 0 && inumber < 9
+                {
+                    print(inumber);
+                    number = inumber;
+                    break;
+                }
+            }
             print("Please input a number between 0 - 8 !");
             continue_s = nil;
             continue;
@@ -65,12 +85,19 @@ else
         if (sudoku.set_grid(Row: row, Col: column, Num: number))
         {
             print("Worked!");
-        }
-        else{
-            continue_s = nil;
-            continue;
+            sudoku.print_grid();
         }
         
+        print("Enter 1 to continue, any other key if you want to input more values!")
         continue_s = readLine()!;
-    } while(continue_s != nil)
+    } while(continue_s != "1")
+    if (sudoku.solve_sudoku())
+    {
+        print("Sudoku solved!");
+        sudoku.print_grid();
+    }
+    else
+    {
+        print("Unsolved!");
+    }
 }
