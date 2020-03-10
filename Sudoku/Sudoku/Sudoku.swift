@@ -102,33 +102,37 @@ class Sudoku{
         var row : Int = 0;
         var col : Int = 0;
         
-        // If there is no unassigned location,
-        // we are done
+        // Check if there is still an unassigned index
+        // This function will increment the row and column to find unassigned index
         if (!find_unassigned_location(row : &row, col : &col))
         {
-            return true; // success!
+            // Sudoku Solved
+            return true;
         }
         
-        // consider digits 1 to 9
+        // Iterate from number 1 - 9
         for num in 1...9
         {
-            // if looks promising
+            // if it is possbile to input current number to current index
+            // this function will check box, horizontal, and vertical
             if (is_safe(row : row, col : col, num : num))
             {
-                // make tentative assignment
+                // assign number temporarily to curent index
                 grid[row, col] = num;
                 
-                // return, if success, yay!
+                // Start recursion
                 if (solve_sudoku())
                 {
+                    // Sudoku Solved
                     return true;
                 }
                 
-                // failure, unmake & try again
+                // unassign number from index, and begin next iteration with next number
                 grid[row, col] = UNASSIGNED;
             }
         }
-        return false; // this triggers backtracking
+        // return from recursion to try another number
+        return false;
     }
     
     func generate_solvable_grid()
