@@ -140,8 +140,8 @@ class Sudoku{
         var random_sequence : [Int] = [1, 2, 3, 4, 5, 6 ,7 ,8 ,9];
         random_sequence.shuffle();
         
-        print(random_sequence);
-        print("");
+        // print(random_sequence);
+        // print("");
         
         for n in 0..<9
         {
@@ -149,14 +149,14 @@ class Sudoku{
         }
         
         
-        print_grid();
+        // print_grid();
         
         if(!solve_sudoku())
         {
             fatalError("No Solution!");
         }
         
-        print_grid();
+        // print_grid();
         
         // Setting random grid to 0
         for _ in 0..<60
