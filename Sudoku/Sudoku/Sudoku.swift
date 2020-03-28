@@ -17,12 +17,22 @@ class Sudoku{
     let UNASSIGNED : Int = 0;
     
     var grid : Matrix = Matrix(rows : 9, columns: 9);
-    
+
+/***********************
+* print_grid(): print the Sudoku grid to the console
+* @parameter: -
+* @return: -
+********************/     
     func print_grid(/*grid:[[Int]]*/)
     {
         grid.printGrid();
     }
-    
+
+/***********************
+* set_grid(): assign a number to an index manually
+* @parameter: Int, Int, Int
+* @return: Bool (return false if the user tries to assign a number less than 1 or larger than 9)
+********************/   
     func set_grid(Row : Int, Col : Int, Num : Int) -> Bool
     {
         if (Num >= 1 && Num < 10)
