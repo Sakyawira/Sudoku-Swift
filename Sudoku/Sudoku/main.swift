@@ -1,16 +1,18 @@
-//
-//  main.swift
-//  Sudoku
-//
-//  Created by Sakyawira Ruslim on 6/03/20.
-//  Copyright © 2020 Sakyawira Ruslim. All rights reserved.
-//
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) 2020 Media Design School
+File Name   :   main.swift
+Description :   handle user inputs and calling the Sudoku functions
+Author      :   Sakyawira Nanda Ruslim
+Mail        :   Sakyawira.Rus8080@mediadesign.school.nz
+**************************************************************************/
 
 import Foundation
 
 var sudoku = Sudoku();
-
-// sudoku.generate_solvable_grid();
 
 print("Do you want to make your own grid?");
 print("0 :  No, any other key : Yes");

@@ -1,10 +1,14 @@
-//
-//  Sudoku.swift
-//  Sudoku
-//
-//  Created by Sakyawira Ruslim on 6/03/20.
-//  Copyright © 2020 Sakyawira Ruslim. All rights reserved.
-//
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) 2020 Media Design School
+File Name   :   Sudoku.swift
+Description :   Has all the functionalities to generate and solve Sudoku problems
+Author      :   Sakyawira Nanda Ruslim
+Mail        :   Sakyawira.Rus8080@mediadesign.school.nz
+**************************************************************************/
 
 import Foundation
 

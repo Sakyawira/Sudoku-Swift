@@ -1,10 +1,14 @@
-//
-//  Matrix.swift
-//  Sudoku
-//
-//  Created by Sakyawira Ruslim on 9/03/20.
-//  Copyright © 2020 Sakyawira Ruslim. All rights reserved.
-//
+/***********************************************************************
+Bachelor of Software Engineering
+Media Design School
+Auckland
+New Zealand
+(c) 2020 Media Design School
+File Name   :   Matrix.swift
+Description :   Create a struct called Matrix which will become the grid of the Sudoku game
+Author      :   Sakyawira Nanda Ruslim
+Mail        :   Sakyawira.Rus8080@mediadesign.school.nz
+**************************************************************************/
 
 import Foundation
 
