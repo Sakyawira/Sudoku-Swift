@@ -103,7 +103,7 @@ while (true)
         }
         else
         {
-            print("Unsolved!");
+            print("Sudoku Unsolvable!");
         }
     }
     print("Play again? No: 0, Yes: Other");
