@@ -37,8 +37,11 @@ class Sudoku{
     {
         if (Num >= 1 && Num < 10)
         {
-            grid[Row, Col] = Num;
-            return true;
+            if (is_safe(row : Row, col : Col, num : Num))
+            {
+                grid[Row, Col] = Num;
+                return true;
+            }
         }
         return false;
     }

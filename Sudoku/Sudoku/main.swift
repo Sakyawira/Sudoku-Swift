@@ -92,9 +92,13 @@ while (true)
                 print("Worked!");
                 sudoku.print_grid();
             }
-            
+            else
+            {
+                print("You cannot input the same number into the same row/column/box!")
+            }
             print("Enter 1 to continue, any other key if you want to input more values!")
             continue_s = readLine()!;
+            
         } while(continue_s != "1")
         if (sudoku.solve_sudoku())
         {
