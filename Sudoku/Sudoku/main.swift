@@ -41,7 +41,7 @@ while (true)
                 {
                     if irow >= 0 && irow < 9
                     {
-                        print(irow);
+                        // print(irow);
                         row = irow;
                         break;
                     }
@@ -59,7 +59,7 @@ while (true)
                 {
                     if icolumn >= 0 && icolumn < 9
                     {
-                        print(icolumn);
+                        // print(icolumn);
                         column = icolumn;
                         break;
                     }
@@ -77,7 +77,7 @@ while (true)
                 {
                     if inumber >= 1 && inumber < 10
                     {
-                        print(inumber);
+                        // print(inumber);
                         number = inumber;
                         break;
                     }
@@ -98,7 +98,7 @@ while (true)
             }
             print("Enter 1 to continue, any other key if you want to input more values!")
             continue_s = readLine()!;
-            
+
         } while(continue_s != "1")
         if (sudoku.solve_sudoku())
         {
